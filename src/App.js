@@ -1,15 +1,15 @@
 // import logo from './logo.svg';
 import './App.css';
 import Alert from './components/Alert';
-import Myabout from './components/Myabout';
+// import Myabout from './components/Myabout';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, { useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route,
+// } from "react-router-dom";
 
 
 
@@ -113,20 +113,21 @@ function App() {
 
   return (
     <>
-    <Router>
+    {/* <Router> */}
       <div>
         <Navbar title="TextCraft" aboutText="About Us" mode={mode} toggleMode={toggleMode} toggleRedMode={toggleRedMode} toggleGreenMode = {toggleGreenMode} toggleBlueMode={toggleBlueMode} />
         <Alert alert= {alert}/> 
         <div className="container my-3">
-          <Routes>
-            <Route exact path="/about" element={<Myabout mode={mode} whichHex={whichHex}/>}></Route>
-            <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter Text To Analyse" mode={mode} whichMode = {whichMode} whichHex={whichHex}/>}></Route>       
-          </Routes>
+          {/* <Routes> */}
+            {/* <Route exact path="/about" element={<Myabout mode={mode} whichHex={whichHex}/>}></Route> */}
+            {/* <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter Text To Analyse" mode={mode} whichMode = {whichMode} whichHex={whichHex}/>}></Route>        */}
+          {/* </Routes> */}
+          <TextForm showAlert={showAlert} heading="Enter Text To Analyse" mode={mode} whichMode = {whichMode} whichHex={whichHex}/>
 
         </div>
       </div>
    
-    </Router>
+    {/* </Router> */}
   </> 
   );
 }
