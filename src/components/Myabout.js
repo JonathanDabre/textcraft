@@ -1,82 +1,60 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-export default function Myabout() {
+export default function Myabout(props) {
     
-    const [myStyle, setMyStyle] = useState(
-        {
-            color: 'black',
-            backgroundColor: 'white'
-        }
-    )
-
-    const [btntext, setBtntext] = useState("Enable Dark Mode")
     
 
-    const toggleStyle = () =>{
-        if(myStyle.color === 'white'){
-            setMyStyle({
-                color:'black',
-                backgroundColor: 'white'
-            })
-            setBtntext("Enable Dark Mode")
-        }
-        else{
-            setMyStyle({
-                color:'white',
-                backgroundColor: 'black'
-            })
-            setBtntext("Enable Bright Mode")
-        }
-    }
+    
+
+   
     
 
 
     return (
         <>
-            <div className="container my-3 py-3" style={myStyle}>
-                <h2>About Us</h2>
-                <div className="accordion" id="accordionExample" style={myStyle}>
-                <div className="accordion-item" style={myStyle}>
-                    <h2 className="accordion-header" id="headingOne">
-                    <button className="accordion-button"  style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Accordion Item #1
-                    </button>
-                    </h2>
-                    <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div className="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                    </div>
-                </div>
-                <div className="accordion-item" style={myStyle}>
-                    <h2 className="accordion-header" id="headingTwo">
-                    <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Accordion Item #2
-                    </button>
-                    </h2>
-                    <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    <div className="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                    </div>
-                </div>
-                <div className="accordion-item" style={myStyle}>
-                    <h2 className="accordion-header" id="headingThree">
-                    <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Accordion Item #3
-                    </button>
-                    </h2>
-                    <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                    <div className="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <button className='btn btn-primary mt-3' id='dark-mode-btn' onClick={toggleStyle}>{btntext}</button>
+            <div className="container" style={{backgroundColor:props.mode === 'dark'? props.whichHex :'white', color:props.mode === 'dark'? 'white':'black'}}>
 
-            </div>
-            
+                <h2 className='text-center font-italic' >ABOUT US</h2>
+                <div className="accordion my-5" id="accordionFlushExample" >
+                    <div className="accordion-item" style={{backgroundColor:props.mode === 'dark'? props.whichHex :'white', color:props.mode === 'dark'? 'white':'black'}}>
+                        <h2 className="accordion-header font-monospace fw-bold" id="flush-headingOne" >
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style={{backgroundColor:props.mode === 'dark'? props.whichHex :'white', color:props.mode === 'dark'? 'white':'black'}}>
+                                TextCraft
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" className="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div className="accordion-body lh-base">TextCraft is a React website built by Jonathan Dabre. The website is derived from the course <strong>ReactJS Tutorial</strong> by YouTuber <span className='fw-bold fst-italic'>Code with Harry</span>. The website provides various features that can be used in day-to-day life. Further improvements to the website will be made over time.</div>
+                        </div>
+                    </div>
+                    <div className="accordion-item" style={{backgroundColor:props.mode === 'dark'? props.whichHex :'white', color:props.mode === 'dark'? 'white':'black'}}>
+                        <h2 className="accordion-header font-monospace fw-bold" id="flush-headingTwo">
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" style={{backgroundColor:props.mode === 'dark'? props.whichHex :'white', color:props.mode === 'dark'? 'white':'black'}}>
+                                Developed By
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div className="accordion-body">
+                                <code>Developer:</code> Jonathan Dabre 
+                                <p><code>Special Mention: </code>Code with Harry</p>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div className="accordion-item" style={{backgroundColor:props.mode === 'dark'? props.whichHex :'white', color:props.mode === 'dark'? 'white':'black'}}>
+                        <h2 className="accordion-header font-monospace fw-bold" id="flush-headingThree">
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" style={{backgroundColor:props.mode === 'dark'? props.whichHex :'white', color:props.mode === 'dark'? 'white':'black'}}>
+                                Technologies
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div className="accordion-body">
+                                <p><code>JS Framework: </code>React JS</p>
+                                <p><code>CSS Framework: </code>Bootstrap</p>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
         </>
     )
 }

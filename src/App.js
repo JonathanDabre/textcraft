@@ -115,11 +115,11 @@ function App() {
     <>
     <Router>
       <div>
-        <Navbar title="Textutils" aboutText="About Us" mode={mode} toggleMode={toggleMode} toggleRedMode={toggleRedMode} toggleGreenMode = {toggleGreenMode} toggleBlueMode={toggleBlueMode} />
+        <Navbar title="TextCraft" aboutText="About Us" mode={mode} toggleMode={toggleMode} toggleRedMode={toggleRedMode} toggleGreenMode = {toggleGreenMode} toggleBlueMode={toggleBlueMode} />
         <Alert alert= {alert}/> 
         <div className="container my-3">
           <Routes>
-            <Route exact path="/about" element={<Myabout/>}></Route>
+            <Route exact path="/about" element={<Myabout mode={mode} whichHex={whichHex}/>}></Route>
             <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter Text To Analyse" mode={mode} whichMode = {whichMode} whichHex={whichHex}/>}></Route>       
           </Routes>
 
